@@ -24,7 +24,11 @@ Sub pasar_reporte_formato_1()
     Range("C2", Range("C2").End(xlToRight).End(xlDown)).Select
     Selection.Copy
 
-' En esta seccion se abre/selecciona el libro del reporte anual, se seleccional
+' En esta seccion se abre/selecciona el libro del reporte anual y se pega la informacion 
+' copiada en el paso 5)
+
+    '5.2) Se "activa" el libro de reporte_anual
+    Workbooks("reporte_anual.xlsx").Activate
 
     '6) Se selleccional la celda A1
     Range("A1").Select
