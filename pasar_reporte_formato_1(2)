@@ -31,7 +31,7 @@ Sub pasar_reporte_formato_1()
     Workbooks.Open "/Users/Santiago/Downloads/reporte_anual.xlsx"
     
     '5.2) Se "activa" el libro de reporte_anual
-    Workbooks("reporte_anual.xlsx").Activate
+    Workbooks("reporte_anual.xlsx").Worksheets("reporte_anual").Activate
 
     '6) Se selleccional la celda A1
     Range("A1").Select
