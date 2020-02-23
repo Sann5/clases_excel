@@ -17,8 +17,7 @@ Sub pasar_reporte_formato_1()
 ' En esta seccion se abre/selecciona el libro del reporte anual, se seleccional
 
     Range("A1").Select
-    Selection.End(xlDown).Select
-    Range("A12").Select
+    Selection.End(xlDown).Offset(1, 0).Select
     ActiveSheet.Paste
 
 End Sub
