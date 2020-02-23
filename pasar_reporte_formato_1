@@ -1,0 +1,24 @@
+Sub pasar_reporte_formato_1()
+'
+' pasar_reporte_formato_1 Macro
+' Pasa los datos de "Day", "Month", "Wind" y "Temp" a el archivo de "reporte_anual"
+'
+
+' En esta seccion se cambain las columnas de orden y se copia los datos que se desea parar al libro
+' reporte_anual
+
+    Columns("C:D").Select
+    Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+    Columns("G:H").Select
+    Selection.Cut Destination:=Columns("C:D")
+    Range("C2:F22").Select
+    Selection.Copy
+
+' En esta seccion se abre/selecciona el libro del reporte anual, se seleccional
+
+    Range("A1").Select
+    Selection.End(xlDown).Select
+    Range("A12").Select
+    ActiveSheet.Paste
+
+End Sub
