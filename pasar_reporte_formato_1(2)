@@ -21,7 +21,7 @@ Sub pasar_reporte_formato_1()
     Selection.Cut Destination:=Columns("C:D")
     
     '5) Selecciona las los datos que no sinteresan y los copia
-    Range("C2:F22").Select
+    Range("C2", Range("C2").End(xlToRight).End(xlDown)).Select
     Selection.Copy
 
 ' En esta seccion se abre/selecciona el libro del reporte anual, se seleccional
