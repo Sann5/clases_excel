@@ -37,10 +37,7 @@ Sub pasar_reporte_formato_1()
     Range("A1").Select
 
     '7) Se selecciona todas las celds de A1 hasta que se encuentra una celda vacia
-    Selection.End(xlDown).Select
-    
-    '8) Se sellecciona la celda A12
-    Range("A12").Select
+    Selection.End(xlDown).Offset(1, 0).Select
 
     '9) Pegar
     ActiveSheet.Paste
