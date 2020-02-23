@@ -4,15 +4,39 @@ Sub pasar_reporte_formato_1()
 ' Pasa los datos de "Day", "Month", "Wind" y "Temp" a el archivo de "reporte_anual"
 '
 
-'
+' En esta seccion se cambain las columnas de orden y se copia los datos que se desea parar al libro
+' reporte_anual
+    
+    '1) Selecciona las columnas C y D
     Columns("C:D").Select
+    
+    '2) Inserta 2 columnas a la derecha de la columan B
     Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+
+    '3) Selecciona las columnas G y H
     Columns("G:H").Select
+    
+    '4) Corta las columnas G y H y las pega en las columnas vacias que fueron incertadas en
+    ' el paso 2)
     Selection.Cut Destination:=Columns("C:D")
+    
+    '5) Selecciona las los datos que no sinteresan y los copia
     Range("C2:F22").Select
     Selection.Copy
+
+' En esta seccion se abre/selecciona el libro del reporte anual, se seleccional
+
+    '6) Se selleccional la celda A1
     Range("A1").Select
+
+    '7) Se selecciona todas las celds de A1 hasta que se encuentra una celda vacia
     Selection.End(xlDown).Select
+    
+    '8) Se sellecciona la celda A12
     Range("A12").Select
+
+    '9) Pegar
     ActiveSheet.Paste
+
+
 End Sub
