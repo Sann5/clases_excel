@@ -27,6 +27,9 @@ Sub pasar_reporte_formato_1()
 ' En esta seccion se abre/selecciona el libro del reporte anual y se pega la informacion 
 ' copiada en el paso 5)
 
+    '5.1) Abrir el archivo de reporte_anual
+    Workbooks.Open "/Users/Santiago/Downloads/reporte_anual.xlsx"
+    
     '5.2) Se "activa" el libro de reporte_anual
     Workbooks("reporte_anual.xlsx").Activate
 
