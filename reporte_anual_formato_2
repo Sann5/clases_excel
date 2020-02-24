@@ -1,0 +1,25 @@
+Sub reporte_anual_formato_2()
+'
+' reporte_anual_formato_2 Macro
+' Llevar datos a formato deseado para usar reporte_anual_formato_1
+'
+
+'
+    Range("A1:BK6").Select
+    Selection.Copy
+    Sheets.Add
+    Selection.PasteSpecial Paste:=xlAll, Operation:=xlNone, SkipBlanks:=False _
+        , Transpose:=True
+    Columns("A:B").Select
+    Application.CutCopyMode = False
+    Selection.Cut Destination:=Columns("H:I")
+    Columns("I:I").Select
+    Selection.Cut Destination:=Columns("G:G")
+    Columns("E:F").Select
+    Selection.Cut Destination:=Columns("I:J")
+    Columns("C:D").Select
+    Selection.Cut Destination:=Columns("A:B")
+    Columns("G:J").Select
+    Selection.Cut Destination:=Columns("C:F")
+    Columns("C:F").Select
+End Sub
