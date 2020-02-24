@@ -4,7 +4,7 @@ Sub reporte_anual_formato_2()
 ' Llevar datos a formato deseado para usar reporte_anual_formato_1
 '
     '1) Seleccionar todos los datos de la hoja
-    Range("A1:BK6").Select
+    Range("A1", Range("A1").End(xlToRight).End(xlDown)).Select
     
     '2) Copiar datos, agregar hoja nueva y pegar los datos transpuestos
     Selection.Copy
