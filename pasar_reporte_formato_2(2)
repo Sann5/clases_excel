@@ -3,13 +3,16 @@ Sub pasar_reporte_formato_2()
 ' pasar_reporte_formato_2() Macro
 ' Llevar datos a formato deseado para usar pasar_reporte_formato_1()
 '
-
-'
+    '1) Seleccionar todos los datos de la hoja
     Range("A1", Range("A1").End(xlToRight).End(xlDown)).Select
+    
+    '2) Copiar datos, agregar hoja nueva y pegar los datos transpuestos
     Selection.Copy
     Sheets.Add
     Selection.PasteSpecial Paste:=xlAll, Operation:=xlNone, SkipBlanks:=False _
         , Transpose:=True
+    
+    '3) Mover los datos para que coinsidan con el formato compatible con la Sub reporte_anual_formato_1
     Columns("E:F").Select
     Selection.Cut Destination:=Columns("G:H")
     Columns("A:A").Select
@@ -18,5 +21,5 @@ Sub pasar_reporte_formato_2()
     Selection.Cut Destination:=Columns("E:E")
     Columns("C:H").Select
     Selection.Cut Destination:=Columns("A:F")
-
+ 
 End Sub
