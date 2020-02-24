@@ -21,14 +21,9 @@ Sub pasar_reporte_formato_2()
     Selection.Cut Destination:=Columns("E:E")
     Columns("C:H").Select
     Selection.Cut Destination:=Columns("A:F")
-       
-    '4)Copy paste de las instrucciones de Sub reporte_anual_formato_1 (para que haga lo mismo)
-    Columns("G:H").Select
-
-    '5) Corta las columnas G y H y las pega en las columnas vacias que fueron incertadas en
-    ' el paso 2)
-    Selection.Cut Destination:=Columns("C:D")
-    
+ 
+ 'Aqui comienza la seccion de instrucciones que ya habiamos escrito para el otro programa
+ 
     '6) Selecciona las los datos que no sinteresan y los copia
     Range("C2", Range("C2").End(xlToRight).End(xlDown)).Select
     Selection.Copy
