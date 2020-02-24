@@ -21,5 +21,35 @@ Sub pasar_reporte_formato_2()
     Selection.Cut Destination:=Columns("E:E")
     Columns("C:H").Select
     Selection.Cut Destination:=Columns("A:F")
+       
+    '4)Copy paste de las instrucciones de Sub reporte_anual_formato_1 (para que haga lo mismo)
+    Columns("G:H").Select
+
+    '5) Corta las columnas G y H y las pega en las columnas vacias que fueron incertadas en
+    ' el paso 2)
+    Selection.Cut Destination:=Columns("C:D")
+    
+    '6) Selecciona las los datos que no sinteresan y los copia
+    Range("C2", Range("C2").End(xlToRight).End(xlDown)).Select
+    Selection.Copy
+
+' En esta seccion se abre/selecciona el libro del reporte anual y se pega la informacion
+' copiada en el paso 5)
+
+    '7) Abrir el archivo de reporte_anual
+    Workbooks.Open "/Users/Santiago/Downloads/reporte_anual.xlsx"
+
+    '8) Se "activa" el libro de reporte_anual
+    Workbooks("reporte_anual.xlsx").Worksheets("reporte_anual").Activate
+
+    '9) Se selleccional la celda A1
+    Range("A1").Select
+
+    '10) Se selecciona todas las celds de A1 hasta que se encuentra una celda vacia
+    Selection.End(xlDown).Offset(1, 0).Select
+
+    11) Pegar
+    ActiveSheet.Paste
+    
  
 End Sub
