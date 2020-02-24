@@ -3,13 +3,16 @@ Sub reporte_anual_formato_2()
 ' reporte_anual_formato_2 Macro
 ' Llevar datos a formato deseado para usar reporte_anual_formato_1
 '
-
-'
+    '1) Seleccionar todos los datos de la hoja
     Range("A1:BK6").Select
+    
+    '2) Copiar datos, agregar hoja nueva y pegar los datos transpuestos
     Selection.Copy
     Sheets.Add
     Selection.PasteSpecial Paste:=xlAll, Operation:=xlNone, SkipBlanks:=False _
         , Transpose:=True
+        
+    '3) Mover los datos para que coinsidan con el formato compatible con la Sub reporte_anual_formato_1
     Columns("A:B").Select
     Application.CutCopyMode = False
     Selection.Cut Destination:=Columns("H:I")
@@ -22,4 +25,5 @@ Sub reporte_anual_formato_2()
     Columns("G:J").Select
     Selection.Cut Destination:=Columns("C:F")
     Columns("C:F").Select
+    
 End Sub
