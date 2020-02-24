@@ -1,0 +1,22 @@
+Sub pasar_reporte_formato_2()
+'
+' pasar_reporte_formato_2() Macro
+' Llevar datos a formato deseado para usar pasar_reporte_formato_1()
+'
+
+'
+    Range("A1", Range("A1").End(xlToRight).End(xlDown)).Select
+    Selection.Copy
+    Sheets.Add
+    Selection.PasteSpecial Paste:=xlAll, Operation:=xlNone, SkipBlanks:=False _
+        , Transpose:=True
+    Columns("E:F").Select
+    Selection.Cut Destination:=Columns("G:H")
+    Columns("A:A").Select
+    Selection.Cut Destination:=Columns("F:F")
+    Columns("B:B").Select
+    Selection.Cut Destination:=Columns("E:E")
+    Columns("C:H").Select
+    Selection.Cut Destination:=Columns("A:F")
+
+End Sub
