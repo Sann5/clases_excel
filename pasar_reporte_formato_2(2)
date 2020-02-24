@@ -48,7 +48,7 @@ Sub pasar_reporte_formato_2()
     '10) Se selecciona todas las celds de A1 hasta que se encuentra una celda vacia
     Selection.End(xlDown).Offset(1, 0).Select
 
-    11) Pegar
+    '11) Pegar
     ActiveSheet.Paste
     
  
